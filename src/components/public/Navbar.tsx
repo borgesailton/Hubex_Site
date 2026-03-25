@@ -43,10 +43,7 @@ export function Navbar() {
           <img 
             src="/hubex1.jpg" 
             alt="Hubex"
-            className={cn(
-              "h-10 w-auto rounded object-contain transition-all duration-300",
-              (!isScrolled && pathname === "/") && "brightness-0 invert opacity-90"
-            )}
+            className="h-10 w-auto object-contain rounded"
           />
         </Link>
 
