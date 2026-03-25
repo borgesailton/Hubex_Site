@@ -52,8 +52,8 @@ export function Sidebar({ collapsed, setCollapsed, mobileOpen, setMobileOpen }: 
         {/* Logo area */}
         <div className="flex h-16 items-center justify-between px-4 border-b border-white/10 shrink-0">
           <Link href="/admin/dashboard" className="flex items-center gap-2 overflow-hidden">
-            <div className="w-8 h-8 rounded-md bg-accent text-white flex items-center justify-center font-bold text-xl shrink-0">
-              H
+            <div className="w-8 h-8 rounded-md overflow-hidden shrink-0">
+              <img src="/hubex1.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             {!collapsed && <span className="font-display font-bold text-xl whitespace-nowrap">Hubex Admin</span>}
           </Link>

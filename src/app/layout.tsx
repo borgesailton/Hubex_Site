@@ -8,10 +8,13 @@ const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Hubex Importadora",
-    default: "Hubex Importadora | Soluções em Importação",
+    template: "%s | Hubex",
+    default: "Hubex | Tênis e Roupas Importadas Exclusivas",
   },
-  description: "Conectamos sua empresa às melhores marcas e fornecedores do mundo com qualidade, segurança e eficiência.",
+  description: "Trabalhamos com os melhores tênis e roupas exclusivas do mundo. Autenticidade garantida.",
+  icons: {
+    icon: "/hubex1.jpg",
+  },
 };
 
 export default function RootLayout({

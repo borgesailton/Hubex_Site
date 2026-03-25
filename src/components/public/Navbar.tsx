@@ -40,13 +40,14 @@ export function Navbar() {
         
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
-          {/* Using text logo for now, wait for image logo implementation */}
-          <span className={cn(
-            "text-2xl font-display font-bold transition-colors",
-            isScrolled || pathname !== "/" ? "text-primary-dark" : "text-white"
-          )}>
-            Hubex
-          </span>
+          <img 
+            src="/hubex1.jpg" 
+            alt="Hubex"
+            className={cn(
+              "h-10 w-auto rounded object-contain transition-all duration-300",
+              (!isScrolled && pathname === "/") && "brightness-0 invert opacity-90"
+            )}
+          />
         </Link>
 
         {/* DESKTOP NAV */}
