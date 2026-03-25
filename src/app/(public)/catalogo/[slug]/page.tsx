@@ -113,7 +113,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   )}
                 </div>
                 {!product.priceOnRequest && product.price && (
-                  <p className="text-sm text-zinc-500 mt-1">Condições especiais para CNPJ</p>
+                  <p className="text-sm text-zinc-500 mt-1">100% Original • Entrega Segura</p>
                 )}
               </div>
 

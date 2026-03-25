@@ -39,16 +39,16 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 relative z-10 text-white py-12">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium mb-6">
-              <TrendIndicator /> Especialistas em Comércio Exterior
+              <TrendIndicator /> Especialistas em Importação Exclusiva
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 animate-slide-up">
-              Soluções em importação para o seu<br />
-              <span className="text-accent">negócio evoluir.</span>
+              Acesso exclusivo aos melhores <br />
+              <span className="text-accent">tênis e roupas importadas.</span>
             </h1>
             
             <p className="text-xl text-zinc-300 mb-10 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: "100ms" }}>
-              Conectamos sua empresa às melhores marcas e fornecedores do mundo com qualidade garantida, segurança certificada e eficiência logística.
+              Trazemos para você as marcas mais exclusivas e desejadas do mundo com garantia de 100% de autenticidade e entrega segura.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: "200ms" }}>
@@ -72,20 +72,20 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-zinc-100">
             <div>
-              <div className="text-4xl font-display font-bold text-primary mb-1">+10</div>
-              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Anos de Experiência</div>
+              <div className="text-4xl font-display font-bold text-primary mb-1">+5000</div>
+              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Entregas Realizadas</div>
             </div>
             <div>
               <div className="text-4xl font-display font-bold text-primary mb-1">+50</div>
-              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Marcas Globais</div>
+              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Marcas Exclusivas</div>
             </div>
             <div>
               <div className="text-4xl font-display font-bold text-primary mb-1">+500</div>
-              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Produtos no Catálogo</div>
+              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Modelos Disponíveis</div>
             </div>
             <div>
               <div className="text-4xl font-display font-bold text-primary mb-1">100%</div>
-              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Garantia de Origem</div>
+              <div className="text-sm font-medium text-zinc-500 uppercase tracking-wide">Autenticidade</div>
             </div>
           </div>
         </div>
@@ -126,9 +126,9 @@ export default async function HomePage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-accent uppercase mb-3">Nossas Soluções</h2>
+            <h2 className="text-sm font-bold tracking-widest text-accent uppercase mb-3">Nosso Catálogo</h2>
             <h3 className="text-3xl md:text-4xl font-display font-bold text-primary-dark">
-              Explorar por Categoria
+              Navegue por Categoria
             </h3>
           </div>
 
@@ -160,10 +160,10 @@ export default async function HomePage() {
         
         <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-            Pronto para impulsionar a sua operação?
+            Pronto para garantir seu novo hype?
           </h2>
           <p className="text-xl text-white/90 mb-10">
-            Nossa equipe de especialistas está a postos para entender a demanda da sua empresa e encontrar a melhor solução global.
+            Nossa equipe está pronta para te ajudar a encontrar aquele modelo exclusivo que você tanto procura.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contato">

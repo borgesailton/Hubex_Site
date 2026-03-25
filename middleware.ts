@@ -6,6 +6,10 @@ export default auth((req: NextRequest & { auth: unknown }) => {
   const isAdminRoute = req.nextUrl.pathname.startsWith("/admin");
   const isLoginPage = req.nextUrl.pathname === "/admin/login";
 
+  if (req.nextUrl.pathname === "/admin") {
+    return NextResponse.redirect(new URL(isLoggedIn ? "/admin/dashboard" : "/admin/login", req.url));
+  }
+
   if (isAdminRoute && !isLoginPage && !isLoggedIn) {
     return NextResponse.redirect(new URL("/admin/login", req.url));
   }
