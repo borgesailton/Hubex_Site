@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: ghcr.io/${GITHUB_REPOSITORY:-hubex/site}:latest
+    image: ghcr.io/borgesailton/hubex_site:main
     container_name: hubex_web
     restart: always
     env_file:
