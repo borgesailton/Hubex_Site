@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:15-alpine
+    container_name: hubex_db
+    restart: always
+    environment:
+      POSTGRES_USER: hubex
+      POSTGRES_PASSWORD: hubexpassword
+      POSTGRES_DB: hubex
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   web:
     image: ghcr.io/borgesailton/hubex_site:main
     container_name: hubex_web
@@ -8,13 +21,14 @@ services:
     env_file:
       - .env
     environment:
-      - DATABASE_URL=file:../dev.db
+      # Inject postgres url directly pointing to the 'db' container
+      - DATABASE_URL=postgresql://hubex:hubexpassword@db:5432/hubex?schema=public
     ports:
       - "3000:3000"
     volumes:
-      # Persist local SQLite DB (if using SQLite in prod) and uploads
-      - ./data/dev.db:/app/dev.db
       - ./data/uploads:/app/public/uploads
+    depends_on:
+      - db
 
   nginx:
     image: nginx:alpine
