@@ -1,0 +1,29 @@
+
+> hubex-site@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+- Environments: .env.local, .env
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 19.0s
+  Running TypeScript ...
+Failed to type check.
+
+.next/types/validator.ts:171:31
+Type error: Type 'typeof import("D:/GitHub Repos/Hubex_Site/hubex-site/src/app/api/categories/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/categories/[id]">'.
+  Types of property 'GET' are incompatible.
+    Type '(req: NextRequest, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ name: string; id: string; createdAt: Date; slug: string; description: string | null; imageUrl: string | null; active: boolean; order: number; updatedAt: Date; }> | NextResponse<...>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+
+  169 |   type __IsExpected<Specific extends RouteHandlerConfig<"/api/categories/[id]">> = Specific
+  170 |   const handler = {} as typeof import("../../src/app/api/categories/[id]/route.js")
+> 171 |   type __Check = __IsExpected<typeof handler>
+      |                               ^
+  172 |   // @ts-ignore
+  173 |   type __Unused = __Check
+  174 | }
+Next.js build worker exited with code: 1 and signal: null

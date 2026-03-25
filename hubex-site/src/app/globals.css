@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #245F98;
+  --color-primary-dark: #1D4E7D;
+  --color-primary-light: #2E7BC4;
+  --color-accent: #D9953C;
+  --color-accent-light: #E2A652;
+  --color-accent-dark: #BF7D2B;
+  --color-hubex-bg: #F5F3EE;
+  --color-hubex-text: #1F2937;
+  --color-hubex-muted: #6B7280;
+  --color-hubex-border: #E5E7EB;
+  --color-hubex-card: #FFFFFF;
+
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-display: var(--font-sora), "Sora", sans-serif;
+
+  --animate-fade-in: fadeIn 0.3s ease-in;
+  --animate-slide-up: slideUp 0.4s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  --background-image-hero-gradient: linear-gradient(135deg, #1D4E7D 0%, #245F98 50%, #2E7BC4 100%);
+  --background-image-accent-gradient: linear-gradient(135deg, #D9953C 0%, #E2A652 100%);
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-card-hover: 0 10px 25px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08);
+  --shadow-glow-primary: 0 0 20px rgba(36, 95, 152, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(217, 149, 60, 0.3);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --radius: 0.5rem;
+  }
+  
+  body {
+    background-color: var(--color-hubex-bg);
+    color: var(--color-hubex-text);
+  }
+}
+
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F3EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

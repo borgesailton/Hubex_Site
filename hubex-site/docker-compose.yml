@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    image: ghcr.io/${GITHUB_REPOSITORY:-hubex/site}:latest
+    container_name: hubex_web
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      # Persist local SQLite DB (if using SQLite in prod) and uploads
+      - ./data/dev.db:/app/dev.db
+      - ./data/uploads:/app/public/uploads
+
+  nginx:
+    image: nginx:alpine
+    container_name: hubex_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - web
