@@ -52,8 +52,8 @@ COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
 COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
-# Install prisma CLI and dotenv for runtime configuration
-RUN npm install -g prisma@7.5.0 dotenv ts-node typescript --quiet
+# Install prisma and ts-node locally for runtime configuration
+RUN npm init -y && npm install prisma@7.5.0 ts-node typescript --quiet
 
 # Create uploads directory and set permissions
 RUN mkdir -p public/uploads
