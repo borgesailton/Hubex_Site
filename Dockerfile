@@ -46,10 +46,19 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
+
+# Copy entrypoint and make executable (must be done as root before USER switch)
+COPY entrypoint.sh ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+
+# Install prisma CLI for migrations at runtime
+RUN npm install -g prisma@7.5.0 --quiet
 
 # Create uploads directory and set permissions
 RUN mkdir -p public/uploads
 RUN chown -R nextjs:nodejs public/uploads
+RUN chown nextjs:nodejs entrypoint.sh
 
 USER nextjs
 
@@ -59,6 +68,5 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-# Note: In production you should run prisma migrate deploy before starting the app.
-# A custom entrypoint script would be better, but we will assume it runs on db creation.
-CMD ["node", "server.js"]
+# Note: entrypoint.sh runs prisma db push before starting Next.js
+CMD ["./entrypoint.sh"]
